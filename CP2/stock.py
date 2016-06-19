@@ -4,6 +4,8 @@ class K:
         self.price=None
         self.symbol=symbol
     def update(self,timestamp,price):
+        if price<0:
+            raise ValueError("error")
         self.price=price
 
 
