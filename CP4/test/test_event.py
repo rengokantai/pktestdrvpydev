@@ -24,3 +24,5 @@ class EventTest(unittest.TestCase):
         event.connect(listener)
         event.fire(1,b='b')
         listener.assert_called_with(1,b='b')
+        listener.assert_has_calls([mock.call(1,b='b')])
+        listener.assert_any_call(1,b='b')

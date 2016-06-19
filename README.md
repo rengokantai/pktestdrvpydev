@@ -24,3 +24,10 @@ python -m unittest CP1.test.test_stock
 >>> event.fire(3)
 3
 ```
+######Using the python mocking framework
+```
+assert_called_with
+assert_called_once_with
+assert_any_call
+assert_has_calls
+```
