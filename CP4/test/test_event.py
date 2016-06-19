@@ -11,3 +11,13 @@ class EventTest(unittest.TestCase):
         event.connect(listener)
         event.fire()
         self.assertTrue(called)
+
+    def test_listener_params(self):
+        params=()
+        def listener(*args,**kwargs):
+            nonlocal params
+            params=(args,kwargs)
+        event = Event()
+        event.connect(listener)
+        event.fire(1,b='b')
+        self.assertEqual(((1,),{'b':'b'}),params)
