@@ -16,11 +16,8 @@ class KTest(unittest.TestCase):
 
     def test_negative_throw(self):
         ke = K("k")
-        try:
+        with self.assertRaises(ValueError):
             ke.update(datetime(2016, 6, 18), -1)
-        except ValueError:
-            return
-        self.fail("not raised error")
 
 
 if __name__ == '__main__':
